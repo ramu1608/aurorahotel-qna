@@ -7,7 +7,7 @@ def retrieve(query: str, k: int = 2,vectorstore=None) -> list[str]:
     results = vectorstore.similarity_search(query, k=k)
 
     # Return each chunk with its content and metadata
-    return [
+    return [ 
         f"Content:\n{r.page_content}\n\nMetadata:\n{r.metadata}"
         for r in results
     ]
@@ -16,7 +16,7 @@ def retrieve(query: str, k: int = 2,vectorstore=None) -> list[str]:
 def generate(query, retrieved_chunks,model) -> str:
 
     prompt = f"""
-    You are an AI assistant answering questions about medical insurance policies.
+    You are an AI assistant answering questions about AURORASTAY HOTELS.
 
     User Query:
     {query}
